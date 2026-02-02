@@ -1,5 +1,6 @@
 import { randomUUID } from "crypto";
 import express, { Request, Response } from "express";
+import rateLimit from "express-rate-limit";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +13,15 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use("/", express.static("webroot"));
 app.use("/public/static", express.static("static"));
+app.use(
+    rateLimit({
+        windowMs: 15 * 60 * 1000,
+        limit: 900,
+        standardHeaders: "draft-6",
+        legacyHeaders: false,
+        ipv6Subnet: 56,
+    }),
+);
 
 const EXAMPLE_ALERT = {
     type: "WARNING",
@@ -19,20 +29,38 @@ const EXAMPLE_ALERT = {
     id: "alert_51d88fcafc9a4ae79add92cde6dac512",
 };
 
-app.get("/", (_req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
     return res.render("content/home", {
+        _version: process.env.GIT_REVISION_HASH,
+        _generated: new Date().toISOString(),
+        _client_ip: req.ip,
+        _pathname: req.path,
+        // @ts-expect-error
+        _ratelimit: req.rateLimit,
         alert: EXAMPLE_ALERT,
     });
 });
 
-app.get("/um-okkur", (_req: Request, res: Response) => {
+app.get("/um-okkur", (req: Request, res: Response) => {
     return res.render("content/about", {
+        _version: process.env.GIT_REVISION_HASH,
+        _generated: new Date().toISOString(),
+        _client_ip: req.ip,
+        _pathname: req.path,
+        // @ts-expect-error
+        _ratelimit: req.rateLimit,
         alert: EXAMPLE_ALERT,
     });
 });
 
-app.get("/hafa-samband", (_req: Request, res: Response) => {
+app.get("/hafa-samband", (req: Request, res: Response) => {
     return res.render("content/contact", {
+        _version: process.env.GIT_REVISION_HASH,
+        _generated: new Date().toISOString(),
+        _client_ip: req.ip,
+        _pathname: req.path,
+        // @ts-expect-error
+        _ratelimit: req.rateLimit,
         alert: EXAMPLE_ALERT,
     });
 });
@@ -48,5 +76,7 @@ app.use((req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
+    process.env.GIT_REVISION_HASH = require("child_process").execSync("git rev-parse HEAD").toString().trim();
+
     console.log(`Server running at http://0.0.0.0:${port}`);
 });
