@@ -1,8 +1,6 @@
 import { randomUUID } from "crypto";
 import express, { Request, Response } from "express";
 import rateLimit from "express-rate-limit";
-import { readFileSync } from "fs";
-import { join } from "path";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -78,14 +76,8 @@ app.use((req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-    try {
-        const hashfile_content = readFileSync(join(__dirname, "GIT_HASH"), { encoding: "utf-8" });
-        process.env.GIT_REVISION_HASH = hashfile_content.replace(/\n/g, "");
-    } catch (e) {
-        console.error("Could not set environment variable GIT_REVISION_HASH, encountered error:", e);
-
-        process.env.GIT_REVISION_HASH = undefined;
-    }
+    console.log("Version:");
+    console.log(process.env.GIT_COMMIT);
 
     console.log(`Server running at http://0.0.0.0:${port}`);
 });
