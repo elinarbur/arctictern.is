@@ -29,6 +29,10 @@ const EXAMPLE_ALERT = {
     id: "alert_51d88fcafc9a4ae79add92cde6dac512",
 };
 
+app.get("/health", (_req, res) => {
+    return res.status(200).send("OK");
+});
+
 app.get("/", (req: Request, res: Response) => {
     return res.render("content/home", {
         _version: process.env.SOURCE_COMMIT,
