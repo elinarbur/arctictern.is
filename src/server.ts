@@ -22,6 +22,7 @@ app.use(
         ipv6Subnet: 56,
     }),
 );
+app.set("trust proxy", 1);
 
 const EXAMPLE_ALERT = {
     type: "WARNING",
