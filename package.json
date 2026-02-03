@@ -7,7 +7,7 @@
         "start": "nodemon --exec \"ts-node -r tsconfig-paths/register\" src/server.ts",
         "tw": "npx @tailwindcss/cli -i ./static/css/tw.css -o ./static/css/tw.min.css --watch",
         "dev": "concurrently \"npm:start\" \"npm:tw\"",
-        "build": "tsc && copyfiles \"views/**/*\" \"static/**/*\" \"webroot/**/*\" \".build\"",
+        "build": "tsc && copyfiles \"views/**/*\" \"static/**/*\" \"webroot/**/*\" \".build\" && git rev-parse HEAD > .build/GIT_HASH",
         "serve": "TS_NODE_BASEURL=./.build node -r tsconfig-paths/register .build/server.js",
         "serve-nt": "set TS_NODE_BASEURL=./.build && node -r tsconfig-paths/register .build/server.js"
     },
