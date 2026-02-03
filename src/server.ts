@@ -31,7 +31,7 @@ const EXAMPLE_ALERT = {
 
 app.get("/", (req: Request, res: Response) => {
     return res.render("content/home", {
-        _version: process.env.GIT_REVISION_HASH,
+        _version: process.env.SOURCE_COMMIT,
         _generated: new Date().toISOString(),
         _client_ip: req.ip,
         _pathname: req.path,
@@ -43,7 +43,7 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/um-okkur", (req: Request, res: Response) => {
     return res.render("content/about", {
-        _version: process.env.GIT_REVISION_HASH,
+        _version: process.env.SOURCE_COMMIT,
         _generated: new Date().toISOString(),
         _client_ip: req.ip,
         _pathname: req.path,
@@ -55,7 +55,7 @@ app.get("/um-okkur", (req: Request, res: Response) => {
 
 app.get("/hafa-samband", (req: Request, res: Response) => {
     return res.render("content/contact", {
-        _version: process.env.GIT_REVISION_HASH,
+        _version: process.env.SOURCE_COMMIT,
         _generated: new Date().toISOString(),
         _client_ip: req.ip,
         _pathname: req.path,
@@ -77,7 +77,7 @@ app.use((req: Request, res: Response) => {
 
 app.listen(port, () => {
     console.log("Version:");
-    console.log(process.env.GIT_COMMIT);
+    console.log(process.env.SOURCE_COMMIT);
 
     console.log(`Server running at http://0.0.0.0:${port}`);
 });
