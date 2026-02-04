@@ -58,6 +58,18 @@ app.get("/um-okkur", (req: Request, res: Response) => {
     });
 });
 
+app.get("/thjonusta", (req: Request, res: Response) => {
+    return res.render("content/services", {
+        _version: process.env.SOURCE_COMMIT,
+        _generated: new Date().toISOString(),
+        _client_ip: req.ip,
+        _pathname: req.path,
+        // @ts-expect-error
+        _ratelimit: req.rateLimit,
+        alert: EXAMPLE_ALERT,
+    });
+});
+
 app.get("/hafa-samband", (req: Request, res: Response) => {
     return res.render("content/contact", {
         _version: process.env.SOURCE_COMMIT,
