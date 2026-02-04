@@ -306,6 +306,9 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-16 {
+    gap: calc(var(--spacing) * 16);
+  }
   .space-y-2 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
@@ -534,30 +537,17 @@
   opacity: 0.5;
 }
 .at--custom-link {
-  position: relative;
-}
-.at--custom-link::after {
-  position: absolute;
-  bottom: calc(var(--spacing) * 0);
-  left: calc(var(--spacing) * 0);
-  z-index: calc(10 * -1);
-  display: block;
-  height: calc(var(--spacing) * 2.5);
-  width: 100%;
-  background-color: color-mix(in srgb, oklch(90.5% 0.182 98.111) 50%, transparent);
+  background-image: linear-gradient( color-mix(in srgb, oklch(90.5% 0.182 98.111) 50%, transparent), color-mix(in srgb, oklch(90.5% 0.182 98.111) 50%, transparent) );
   @supports (color: color-mix(in lab, red, red)) {
-    background-color: color-mix(in oklab, var(--color-yellow-300) 50%, transparent);
+    background-image: linear-gradient( color-mix(in oklab, var(--color-yellow-300) 50%, transparent), color-mix(in oklab, var(--color-yellow-300) 50%, transparent) );
   }
-  transition-property: all;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
-  --tw-duration: 300ms;
-  transition-duration: 300ms;
-  content: "";
+  background-size: 100% calc(var(--spacing) * 2.5);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms ease;
 }
-.at--custom-link:hover::after {
-  height: 100%;
-  background-color: var(--color-yellow-300);
+.at--custom-link:hover, .group:has(.at--custom-link):is(:hover) .at--custom-link {
+  background-size: 100% 100%;
 }
 @property --tw-space-y-reverse {
   syntax: "*";
