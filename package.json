@@ -8,8 +8,8 @@
         "tw": "npx @tailwindcss/cli -i ./static/css/tw.css -o ./static/css/tw.min.css --watch",
         "dev": "concurrently \"npm:start\" \"npm:tw\"",
         "build": "tsc && copyfiles \"views/**/*\" \"static/**/*\" \"webroot/**/*\" \".build\"",
-        "serve": "TS_NODE_BASEURL=./.build node -r tsconfig-paths/register .build/server.js",
-        "serve-nt": "set TS_NODE_BASEURL=./.build && node -r tsconfig-paths/register .build/server.js"
+        "serve": "TS_NODE_BASEURL=./.build node -r tsconfig-paths/register .build/src/server.js",
+        "serve-nt": "set TS_NODE_BASEURL=./.build && node -r tsconfig-paths/register .build/src/server.js"
     },
     "keywords": [],
     "author": "Kría Elínarbur <kria.elinarbur@arctictern.is>",
