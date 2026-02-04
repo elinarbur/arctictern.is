@@ -1,3 +1,4 @@
+import { web_services_router } from "@/src/routers/web-services";
 import { randomUUID } from "crypto";
 import express, { Request, Response } from "express";
 import rateLimit from "express-rate-limit";
@@ -11,8 +12,6 @@ app.disable("x-powered-by");
 
 app.use(express.json());
 app.use(express.urlencoded());
-app.use("/", express.static("webroot"));
-app.use("/public/static", express.static("static"));
 app.use(
     rateLimit({
         windowMs: 15 * 60 * 1000,
@@ -23,8 +22,11 @@ app.use(
     }),
 );
 app.set("trust proxy", 1);
+app.use("/", express.static("webroot"));
+app.use("/public/static", express.static("static"));
+app.use("/vefthjonustur", web_services_router);
 
-const EXAMPLE_ALERT = {
+export const EXAMPLE_ALERT = {
     type: "WARNING",
     message: "Bilun í stofnkerfi Mílu kann að valda truflunum fyrir viðskiptavini á Norðurlandi-Eystra",
     id: "alert_51d88fcafc9a4ae79add92cde6dac512",
