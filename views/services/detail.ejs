@@ -46,6 +46,8 @@
                 </div>
             </section>
 
+            <%# "Other services" cards — hidden for now; flip to true to bring back %>
+            <% if (false) { %>
             <section class="w-full max-w-7xl mx-auto px-8 pb-16">
                 <h2 class="text-xl font-semibold"><%= t.service_pages.other_services %></h2>
 
@@ -60,6 +62,7 @@
                     <% } %>
                 </div>
             </section>
+            <% } %>
 
             <%- include('../partials/cta') %>
 
