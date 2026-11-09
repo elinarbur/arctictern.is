@@ -1,10 +1,10 @@
 <%- include('../partials/doc-info') %>
 
 <!DOCTYPE html>
-<html lang="is" data-hx-boost="true">
+<html lang="<%= lang %>" data-hx-boost="true">
     <head>
         <%- include('../partials/head', {
-            html_title: 'Hafa samband'
+            html_title: t.contact.html_title
         }) %>
     </head>
     <body>
@@ -12,16 +12,16 @@
             <%- include('../partials/alert', { alert }) %>
             <!-- prettier-ignore -->
             <%- include('../partials/header', {
-                title: 'Hafa samband',
-                subtitle: `Hjálpaðu okkur að skilja þitt verkefni og þínar þarfir` 
+                title: t.contact.title,
+                subtitle: t.contact.subtitle 
             }) %>
 
             <section class="w-full max-w-7xl mx-auto px-8 py-16">
                 <div class="w-full flex flex-col md:flex-row gap-16">
                     <div class="md:w-1/2">
-                        <h2 class="text-xl font-semibold">Okkar samskiptaleiðir</h2>
+                        <h2 class="text-xl font-semibold"><%= t.contact.channels_title %></h2>
 
-                        <p class="text-lg mt-2">Ekki hika við að senda okkur línu, við reynum að svara um hæl.</p>
+                        <p class="text-lg mt-2"><%= t.contact.channels_body %></p>
 
                         <div class="space-y-4 pt-6">
                             <div class="flex">
@@ -68,14 +68,14 @@
                         </div>
 
                         <p class="text-lg mt-8">
-                            <span>Þarftu að senda reikning?</span>
+                            <span><%= t.contact.send_invoice_question %></span>
 
                             <a
-                                href="/vefthjonustur/rafraen-mottaka-reikninga"
+                                href="<%= url('/vefthjonustur/rafraen-mottaka-reikninga') %>"
                                 target="_blank"
                                 class="inline-flex items-center gap-1 at--custom-link"
                             >
-                                Rafræn móttaka reikninga
+                                <%= t.contact.einvoice_link %>
 
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -90,13 +90,13 @@
                         </p>
 
                         <p class="text-lg mt-8">
-                            <span>Ertu að leita að afritum af reikningum frá okkur?</span>
+                            <span><%= t.contact.invoice_copies_question %></span>
 
-                            <a href="/vefthjonustur/reikningsyfirlit" target="_blank" class="at--custom-link">
-                                Yfirlit útgefinna
+                            <a href="<%= url('/vefthjonustur/reikningsyfirlit') %>" target="_blank" class="at--custom-link">
+                                <%= t.contact.invoice_copies_link_lead %>
 
                                 <span class="inline-flex items-center gap-1">
-                                    reikninga
+                                    <%= t.contact.invoice_copies_link_last %>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 640 640"
@@ -112,12 +112,12 @@
                     </div>
 
                     <div class="md:w-1/2 bg-gray-100 p-6">
-                        <h2 class="text-xl font-semibold">Sendu okkur skilaboð</h2>
+                        <h2 class="text-xl font-semibold"><%= t.contact.form_title %></h2>
 
                         <div class="pt-4 space-y-4">
                             <div class="flex flex-col md:flex-row gap-4">
                                 <div class="md:w-1/2">
-                                    <label class="block text-sm text-black/50 mb-2">Fullt nafn</label>
+                                    <label class="block text-sm text-black/50 mb-2"><%= t.contact.full_name %></label>
 
                                     <input
                                         type="email"
@@ -127,7 +127,7 @@
                                 </div>
 
                                 <div class="md:w-1/2">
-                                    <label class="block text-sm text-black/50 mb-2">Símanúmer</label>
+                                    <label class="block text-sm text-black/50 mb-2"><%= t.contact.phone %></label>
 
                                     <input
                                         type="email"
@@ -139,7 +139,7 @@
 
                             <div class="flex flex-col md:flex-row gap-4">
                                 <div class="md:w-1/2">
-                                    <label class="block text-sm text-black/50 mb-2">Tölvupóstur</label>
+                                    <label class="block text-sm text-black/50 mb-2"><%= t.contact.email %></label>
 
                                     <input
                                         type="email"
@@ -149,19 +149,19 @@
                                 </div>
 
                                 <div class="md:w-1/2">
-                                    <label class="block text-sm text-black/50 mb-2">Efni</label>
+                                    <label class="block text-sm text-black/50 mb-2"><%= t.contact.subject %></label>
 
                                     <select class="text-sm py-3 px-4 bg-white focus:outline-none w-full block h-11">
-                                        <option value="PRE_SALES">Sölubeiðnir og ráðgjöf</option>
-                                        <option value="SERVICE_REQUEST">Verknbeiðnir</option>
-                                        <option value="BOOKKEEPING">Reikningar og bókhald</option>
-                                        <option value="OTHER">Önnur erindi</option>
+                                        <option value="PRE_SALES"><%= t.contact.subjects.PRE_SALES %></option>
+                                        <option value="SERVICE_REQUEST"><%= t.contact.subjects.SERVICE_REQUEST %></option>
+                                        <option value="BOOKKEEPING"><%= t.contact.subjects.BOOKKEEPING %></option>
+                                        <option value="OTHER"><%= t.contact.subjects.OTHER %></option>
                                     </select>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-sm text-black/50 mb-2">Skilaboð</label>
+                                <label class="block text-sm text-black/50 mb-2"><%= t.contact.message %></label>
 
                                 <textarea
                                     rows="5"

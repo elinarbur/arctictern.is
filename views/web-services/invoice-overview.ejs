@@ -1,10 +1,10 @@
 <%- include('../partials/doc-info') %>
 
 <!DOCTYPE html>
-<html lang="is" data-hx-boost="true">
+<html lang="<%= lang %>" data-hx-boost="true">
     <head>
         <%- include('../partials/head', {
-            html_title: 'Yfirlit útgefinna reikninga'
+            html_title: t.invoice_overview.html_title
         }) %>
     </head>
     <body>
@@ -12,23 +12,21 @@
             <%- include('../partials/alert', { alert }) %>
             <!-- prettier-ignore -->
             <%- include('../partials/header', {
-                title: 'Yfirlit útgefinna reikninga',
-                subtitle: `Nálgastu reikninga sem hafa verið gefnir út til þín eða félags sem þú tengist` 
+                title: t.invoice_overview.title,
+                subtitle: t.invoice_overview.subtitle 
             }) %>
 
             <section class="w-full max-w-7xl mx-auto px-8 py-16">
                 <div class="w-full flex flex-col md:flex-row gap-16">
                     <div class="md:w-1/2">
-                        <h2 class="text-xl font-semibold">Hvernig virkar þetta?</h2>
+                        <h2 class="text-xl font-semibold"><%= t.invoice_overview.how_title %></h2>
 
                         <p class="text-lg mt-2">
-                            Þessi þjónusta gerir þér kleift að skrá þig inn með rafrænum skilríkjum og sækja afrit af
-                            þeim reikningum sem gefnir hafa verið út til þín eða félags sem þú tengist.
+                            <%= t.invoice_overview.how_body %>
                         </p>
 
                         <p class="text-lg mt-2">
-                            Ef þú hefur athugasemdir um reikning sem þú hefur fengið þá má endilega hafa samband við
-                            bókhaldssvið í tölvupósti eða síma og skýra erindið:
+                            <%= t.invoice_overview.questions_body %>
                         </p>
 
                         <div class="space-y-4 pt-6">
@@ -62,14 +60,14 @@
                         </div>
 
                         <p class="text-lg mt-8">
-                            <span>Ertu að leitast eftir að senda reikning?</span>
+                            <span><%= t.invoice_overview.send_invoice_question %></span>
 
                             <a
-                                href="/vefthjonustur/rafraen-mottaka-reikninga"
+                                href="<%= url('/vefthjonustur/rafraen-mottaka-reikninga') %>"
                                 target="_blank"
                                 class="inline-flex items-center gap-1 at--custom-link"
                             >
-                                Rafræn móttaka reikninga
+                                <%= t.invoice_overview.einvoice_link %>
 
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -85,12 +83,12 @@
                     </div>
 
                     <div class="md:w-1/2 bg-gray-100 p-6">
-                        <h2 class="text-xl font-semibold">Skráðu þig inn</h2>
+                        <h2 class="text-xl font-semibold"><%= t.invoice_overview.login_title %></h2>
 
                         <div class="pt-4 space-y-4">
                             <div class="flex flex-col md:flex-row gap-4 items-end">
                                 <div class="flex-grow">
-                                    <label class="block text-sm text-black/50 mb-2">Kennitala (Auðkennisapp)</label>
+                                    <label class="block text-sm text-black/50 mb-2"><%= t.invoice_overview.national_id %></label>
 
                                     <input
                                         id="national_id"
@@ -103,7 +101,7 @@
                                 <div class="w-[1px] h-11 bg-gray-200 shrink-0"></div>
 
                                 <div class="flex-grow">
-                                    <label class="block text-sm text-black/50 mb-2">Símanúmer</label>
+                                    <label class="block text-sm text-black/50 mb-2"><%= t.invoice_overview.phone %></label>
 
                                     <input
                                         id="phone_number"
@@ -116,22 +114,22 @@
 
                             <div>
                                 <button
-                                    href="/hafa-samband"
+                                    href="<%= url('/hafa-samband') %>"
                                     class="text-sm bg-black text-gray-100 px-4 py-3 block font-medium hover:bg-black/80 transition duration-300 w-full"
                                 >
-                                    Innskrá með rafrænum skilríkjum
+                                    <%= t.invoice_overview.login_eid %>
                                 </button>
                             </div>
 
                             <div class="flex items-center gap-4">
                                 <div class="h-[1px] w-full bg-gray-200"></div>
-                                <p class="text-sm text-black/50">eða</p>
+                                <p class="text-sm text-black/50"><%= t.common.or %></p>
                                 <div class="h-[1px] w-full bg-gray-200"></div>
                             </div>
 
                             <div class="flex flex-col md:flex-row gap-4">
                                 <div class="md:w-1/2">
-                                    <label class="block text-sm text-black/50 mb-2">Reikningsnúmer</label>
+                                    <label class="block text-sm text-black/50 mb-2"><%= t.invoice_overview.account_number %></label>
 
                                     <input
                                         id="account_number"
@@ -142,7 +140,7 @@
                                 </div>
 
                                 <div class="md:w-1/2">
-                                    <label class="block text-sm text-black/50 mb-2">Leynilykill</label>
+                                    <label class="block text-sm text-black/50 mb-2"><%= t.invoice_overview.password %></label>
 
                                     <input
                                         id="password"
@@ -154,10 +152,10 @@
                             </div>
 
                             <button
-                                href="/hafa-samband"
+                                href="<%= url('/hafa-samband') %>"
                                 class="text-sm bg-gray-300 text-black/80 px-4 py-3 block font-medium hover:bg-gray-300/80 transition duration-300 w-full"
                             >
-                                Innskrá með reikningsnúmeri og leynilykli
+                                <%= t.invoice_overview.login_password %>
                             </button>
                         </div>
                     </div>

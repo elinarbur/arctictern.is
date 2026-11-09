@@ -1,10 +1,10 @@
 <%- include('../partials/doc-info') %>
 
 <!DOCTYPE html>
-<html lang="is" data-hx-boost="true">
+<html lang="<%= lang %>" data-hx-boost="true">
     <head>
         <%- include('../partials/head', {
-            html_title: 'Þjónusta'
+            html_title: t.services_page.html_title
         }) %>
     </head>
     <body>
@@ -13,14 +13,14 @@
 
             <!-- prettier-ignore -->
             <%- include('../partials/header', {
-                title: 'Þjónusta Arctic Tern',
-                subtitle: `Við höfum ekki forritað skotflaug, en við gætum það.`
+                title: t.services_page.title,
+                subtitle: t.services_page.subtitle
             }) %>
 
             <section class="w-full max-w-7xl mx-auto px-8 py-16">
                 <div class="pt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <a
-                        href="/thjonusta/hugbunadur"
+                        href="<%= url('/thjonusta/hugbunadur') %>"
                         class="bg-gray-50 p-4 transition-all duration-100 outline-4 outline-transparent hover:outline-yellow-300 relative group"
                     >
                         <div class="h-16 w-16 bg-yellow-300 grid place-items-center float-right ml-4">
@@ -31,11 +31,10 @@
                             </svg>
                         </div>
 
-                        <p class="text-xl font-semibold text-black">Hugbúnaður</p>
+                        <p class="text-xl font-semibold text-black"><%= t.services.software %></p>
 
                         <p class="text-black/80 mt-2">
-                            Við tökum að okkur ýmis konar verkefni af tagi forritunar, bæði á framenda og bakenda, en
-                            þjónustum einnig hugbúnað frá þriðju aðilum eins og opna símkerfið FS PBX.
+                            <%= t.services_page.software.body %>
                         </p>
 
                         <div class="space-y-2 pt-4 text-black/80">
@@ -52,7 +51,7 @@
                                     </svg>
                                 </div>
 
-                                <span class="mt-0.5">Hugbúnaðarþróun á bak- og framenda</span>
+                                <span class="mt-0.5"><%= t.services_page.software.points[0] %></span>
                             </div>
 
                             <div class="flex gap-2 items-start">
@@ -68,7 +67,7 @@
                                     </svg>
                                 </div>
 
-                                <span class="mt-0.5">Samþætting gagnakerfa</span>
+                                <span class="mt-0.5"><%= t.services_page.software.points[1] %></span>
                             </div>
 
                             <div class="flex gap-2 items-start">
@@ -84,12 +83,12 @@
                                     </svg>
                                 </div>
 
-                                <span class="mt-0.5">Þjónusta við núverandi og/eða aðkeyptan hugbúnað</span>
+                                <span class="mt-0.5"><%= t.services_page.software.points[2] %></span>
                             </div>
                         </div>
 
                         <div class="inline-flex items-center gap-1 mt-4 at--custom-link">
-                            <span class="font-medium text-black">Nánar</span>
+                            <span class="font-medium text-black"><%= t.common.more %></span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-4">
                                 <path
@@ -100,7 +99,7 @@
                     </a>
 
                     <a
-                        href="/thjonusta/kerfisrekstur"
+                        href="<%= url('/thjonusta/kerfisrekstur') %>"
                         class="bg-gray-50 p-4 transition-all duration-100 outline-4 outline-transparent hover:outline-yellow-300 relative group"
                     >
                         <div class="h-16 w-16 bg-yellow-300 grid place-items-center float-right ml-4">
@@ -111,11 +110,10 @@
                             </svg>
                         </div>
 
-                        <p class="text-xl font-semibold text-black">Kerfisrekstur</p>
+                        <p class="text-xl font-semibold text-black"><%= t.services.operations %></p>
 
                         <p class="text-black/80 mt-2">
-                            Við erum sérfræðingar í kerfisrekstri af öllum gerðum, en þar má nefna stjórnun
-                            hugbúnaðarkerfa viðskiptavina, hýsingar/gagnavistunarumhverfi, og netrekstur.
+                            <%= t.services_page.operations.body %>
                         </p>
 
                         <div class="space-y-2 pt-4 text-black/80">
@@ -132,7 +130,7 @@
                                     </svg>
                                 </div>
 
-                                <span class="mt-0.5">Örugg vistunar/hýsingarþjónusta í íslenskum gagnaverum </span>
+                                <span class="mt-0.5"><%= t.services_page.operations.points[0] %> </span>
                             </div>
 
                             <div class="flex gap-2 items-start">
@@ -149,7 +147,7 @@
                                 </div>
 
                                 <span class="mt-0.5">
-                                    Útvistaður kerfisrekstur á hugbúnaði/netkerfum/gagnavistunarkerfum
+                                    <%= t.services_page.operations.points[1] %>
                                 </span>
                             </div>
 
@@ -166,12 +164,12 @@
                                     </svg>
                                 </div>
 
-                                <span class="mt-0.5">Kerfisvöktun, öryggi, og viðhald</span>
+                                <span class="mt-0.5"><%= t.services_page.operations.points[2] %></span>
                             </div>
                         </div>
 
                         <div class="inline-flex items-center gap-1 mt-4 at--custom-link">
-                            <span class="font-medium text-black">Nánar</span>
+                            <span class="font-medium text-black"><%= t.common.more %></span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-4">
                                 <path
@@ -182,7 +180,7 @@
                     </a>
 
                     <a
-                        href="/thjonusta/radgjof"
+                        href="<%= url('/thjonusta/radgjof') %>"
                         class="bg-gray-50 p-4 transition-all duration-100 outline-4 outline-transparent hover:outline-yellow-300 relative group"
                     >
                         <div class="h-16 w-16 bg-yellow-300 grid place-items-center float-right ml-4">
@@ -193,11 +191,10 @@
                             </svg>
                         </div>
 
-                        <p class="text-xl font-semibold text-black">Ráðgjöf</p>
+                        <p class="text-xl font-semibold text-black"><%= t.services.consulting %></p>
 
                         <p class="text-black/80 mt-2">
-                            Þegar eitthvað vantar upp á í hönnun, þróun, eða rekstri tækniinnviða má nálgast sérþekkingu
-                            okkar í ráðgjafaþjónustu til að brúa bilin. Við höfum víða og djúpa þekkingu af tölvukerfum.
+                            <%= t.services_page.consulting.body %>
                         </p>
 
                         <div class="space-y-2 pt-4 text-black/80">
@@ -215,7 +212,7 @@
                                 </div>
 
                                 <span class="mt-0.5">
-                                    Djúp þekking og reynsla af netkerfum, gagnavistun, og fleiru
+                                    <%= t.services_page.consulting.points[0] %>
                                 </span>
                             </div>
 
@@ -233,7 +230,7 @@
                                 </div>
 
                                 <span class="mt-0.5">
-                                    Aðstoð með hönnun og þróun hugbúnaðs, netkerfa, og sjálfvirkniferla
+                                    <%= t.services_page.consulting.points[1] %>
                                 </span>
                             </div>
 
@@ -250,12 +247,12 @@
                                     </svg>
                                 </div>
 
-                                <span class="mt-0.5">Sveigjanleg þjónusta án skuldbindingar</span>
+                                <span class="mt-0.5"><%= t.services_page.consulting.points[2] %></span>
                             </div>
                         </div>
 
                         <div class="inline-flex items-center gap-1 mt-4 at--custom-link">
-                            <span class="font-medium text-black">Nánar</span>
+                            <span class="font-medium text-black"><%= t.common.more %></span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-4">
                                 <path
@@ -266,7 +263,7 @@
                     </a>
 
                     <a
-                        href="/thjonusta/netkerfi"
+                        href="<%= url('/thjonusta/netkerfi') %>"
                         class="bg-gray-50 p-4 transition-all duration-100 outline-4 outline-transparent hover:outline-yellow-300 relative group"
                     >
                         <div class="h-16 w-16 bg-yellow-300 grid place-items-center float-right ml-4">
@@ -277,12 +274,10 @@
                             </svg>
                         </div>
 
-                        <p class="text-xl font-semibold text-black">Netkerfi</p>
+                        <p class="text-xl font-semibold text-black"><%= t.services.networking %></p>
 
                         <p class="text-black/80 mt-2">
-                            Netkerfi eru okkar blóð. Staðar- og internet eru lífæð fleiri og fleiri fyrirtækja og því
-                            mikilvægt að viðkomandi kerfi séu undir verkefnið búin. Þú færð fullkomið net frá Arctic
-                            Tern.
+                            <%= t.services_page.networking.body %>
                         </p>
 
                         <div class="space-y-2 pt-4 text-black/80">
@@ -300,7 +295,7 @@
                                 </div>
 
                                 <span class="mt-0.5">
-                                    Hönnun, uppsetning, og rekstur netinnviða fyrir allan atvinnurekstur
+                                    <%= t.services_page.networking.points[0] %>
                                 </span>
                             </div>
 
@@ -318,7 +313,7 @@
                                 </div>
 
                                 <span class="mt-0.5">
-                                    Netvöktun, öryggisvöktun, og áframhaldandi viðhald netkerfa
+                                    <%= t.services_page.networking.points[1] %>
                                 </span>
                             </div>
 
@@ -336,13 +331,13 @@
                                 </div>
 
                                 <span class="mt-0.5">
-                                    Fullbúin þjónusta sem hentar öllum frá staðarnetum allt í stór víðnet
+                                    <%= t.services_page.networking.points[2] %>
                                 </span>
                             </div>
                         </div>
 
                         <div class="inline-flex items-center gap-1 mt-4 at--custom-link">
-                            <span class="font-medium text-black">Nánar</span>
+                            <span class="font-medium text-black"><%= t.common.more %></span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-4">
                                 <path

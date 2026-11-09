@@ -1,10 +1,10 @@
 <%- include('../partials/doc-info') %>
 
 <!DOCTYPE html>
-<html lang="is" data-hx-boost="true">
+<html lang="<%= lang %>" data-hx-boost="true">
     <head>
         <%- include('../partials/head', {
-            html_title: 'Heimasíða'
+            html_title: t.home.html_title
         }) %>
     </head>
     <body>
@@ -19,18 +19,15 @@
                 <div class="max-w-7xl mx-auto px-8 pt-12 py-32">
                     <div class="w-full">
                         <div class="max-w-2xl">
-                            <h1 class="text-5xl font-semibold leading-14">Við erum sem þokuljós á skýjuð vandamál</h1>
+                            <h1 class="text-5xl font-semibold leading-14"><%= t.home.title %></h1>
 
-                            <p class="text-xl font-medium text-black/80 mt-8 leading-9">
-                                Við hönnum, smíðum, og rekum öflug tölvukerfi sem virka hnökurlaust. Byggt á djúpri,
-                                þverfaglegri þekkingu á tölvukerfum yfir áratugaskeið.
-                            </p>
+                            <p class="text-xl font-medium text-black/80 mt-8 leading-9"><%= t.home.subtitle %></p>
 
                             <a
-                                href="/hafa-samband"
+                                href="<%= url('/hafa-samband') %>"
                                 class="bg-black text-yellow-300 px-4 py-3 inline-block mt-8 font-medium hover:bg-black/80 transition duration-300"
                             >
-                                Hafðu samband
+                                <%= t.common.contact_us %>
                             </a>
                         </div>
                     </div>
@@ -40,16 +37,16 @@
             <section class="w-full max-w-7xl mx-auto px-8 py-16">
                 <div>
                     <div class="text-center">
-                        <h1 class="text-3xl font-semibold">Okkar þjónusta</h1>
+                        <h1 class="text-3xl font-semibold"><%= t.home.our_services %></h1>
                     </div>
 
                     <div class="pt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                         <a
-                            href="/thjonusta/hugbunadur"
+                            href="<%= url('/thjonusta/hugbunadur') %>"
                             class="bg-gray-50 p-4 transition-all duration-100 outline-4 outline-transparent hover:outline-yellow-300 relative group"
                         >
                             <div class="flex items-center gap-2 pb-2 justify-between">
-                                <p class="text-xl font-semibold text-black">Hugbúnaður</p>
+                                <p class="text-xl font-semibold text-black"><%= t.services.software %></p>
 
                                 <div class="h-[28px] w-[28px] bg-yellow-300 grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-5">
@@ -60,15 +57,15 @@
                                 </div>
                             </div>
 
-                            <p class="text-black/80">Þróun á einföldum sem flóknum og öflugum tækniinnviðum</p>
+                            <p class="text-black/80"><%= t.home.software %></p>
                         </a>
 
                         <a
-                            href="/thjonusta/kerfisrekstur"
+                            href="<%= url('/thjonusta/kerfisrekstur') %>"
                             class="bg-gray-50 p-4 transition-all duration-100 outline-4 outline-transparent hover:outline-yellow-300 relative group"
                         >
                             <div class="flex items-center gap-2 pb-2 justify-between">
-                                <p class="text-xl font-semibold text-black">Kerfisrekstur</p>
+                                <p class="text-xl font-semibold text-black"><%= t.services.operations %></p>
 
                                 <div class="h-[28px] w-[28px] bg-yellow-300 grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-5">
@@ -79,15 +76,15 @@
                                 </div>
                             </div>
 
-                            <p class="text-black/80">Rekstur tölvukerfa af öllum stærðum og gerðum</p>
+                            <p class="text-black/80"><%= t.home.operations %></p>
                         </a>
 
                         <a
-                            href="/thjonusta/radgjof"
+                            href="<%= url('/thjonusta/radgjof') %>"
                             class="bg-gray-50 p-4 transition-all duration-100 outline-4 outline-transparent hover:outline-yellow-300 relative group"
                         >
                             <div class="flex items-center gap-2 pb-2 justify-between">
-                                <p class="text-xl font-semibold text-black">Ráðgjöf</p>
+                                <p class="text-xl font-semibold text-black"><%= t.services.consulting %></p>
 
                                 <div class="h-[28px] w-[28px] bg-yellow-300 grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-5">
@@ -98,15 +95,15 @@
                                 </div>
                             </div>
 
-                            <p class="text-black/80">Við aðstoðum þig þar sem vantar upp í, og allir spara</p>
+                            <p class="text-black/80"><%= t.home.consulting %></p>
                         </a>
 
                         <a
-                            href="/thjonusta/netkerfi"
+                            href="<%= url('/thjonusta/netkerfi') %>"
                             class="bg-gray-50 p-4 transition-all duration-100 outline-4 outline-transparent hover:outline-yellow-300 relative group"
                         >
                             <div class="flex items-center gap-2 pb-2 justify-between">
-                                <p class="text-xl font-semibold text-black">Netkerfi</p>
+                                <p class="text-xl font-semibold text-black"><%= t.services.networking %></p>
 
                                 <div class="h-[28px] w-[28px] bg-yellow-300 grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-5">
@@ -117,7 +114,7 @@
                                 </div>
                             </div>
 
-                            <p class="text-black/80">Hönnun, uppsetning, rekstur, og viðhald tölvuneta á öllum skala</p>
+                            <p class="text-black/80"><%= t.home.networking %></p>
                         </a>
                     </div>
                 </div>
