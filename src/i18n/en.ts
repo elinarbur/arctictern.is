@@ -220,6 +220,84 @@ export const en: Dictionary = {
             ],
         },
     },
+    status_page: {
+        html_title: "Service status",
+        title: "Service status",
+        subtitle: "Current service status and incident reports",
+        incidents_title: "Incidents",
+        no_incidents: "No outages or disruptions have been reported.",
+        systems_title: "System status",
+        last_updated: "Last updated",
+        states: {
+            operational: "Operational",
+            degraded: "Degraded",
+            outage: "Outage",
+        },
+        systems: {
+            website: "Website and web services",
+            hosting: "Hosting and data storage",
+            network: "Networking",
+            phone: "Phone systems",
+            email: "Email",
+        },
+    },
+    documents: {
+        placeholder_notice: "This is placeholder content, not the final text.",
+        terms: {
+            html_title: "Terms and conditions",
+            title: "Terms and conditions",
+            subtitle: "Terms that apply to services provided by Arctic Tern ehf.",
+            sections: [
+                {
+                    heading: "1. Scope",
+                    body: "These terms apply to all services Arctic Tern ehf. provides to its clients, unless otherwise agreed in writing.",
+                },
+                {
+                    heading: "2. Services",
+                    body: "The scope of each service is defined in the relevant quote or service agreement. Changes to scope must be confirmed by both parties.",
+                },
+                {
+                    heading: "3. Prices and payment",
+                    body: "Prices follow the current price list or the accepted quote. Invoices are issued electronically and are payable by their due date.",
+                },
+                {
+                    heading: "4. Liability",
+                    body: "Arctic Tern ehf. strives to provide its services with due care. The company's liability is limited to what is set out in the service agreement.",
+                },
+                {
+                    heading: "5. Termination",
+                    body: "The notice period is set out in the service agreement. Notice of termination must be given in writing.",
+                },
+            ],
+        },
+        privacy: {
+            html_title: "Privacy policy",
+            title: "Privacy policy",
+            subtitle: "How Arctic Tern ehf. handles personal data",
+            sections: [
+                {
+                    heading: "1. Controller",
+                    body: "Arctic Tern ehf., Neshaga 16, 107 Reykjavík, is the controller of the personal data covered by this policy.",
+                },
+                {
+                    heading: "2. What we collect",
+                    body: "We collect the information you provide to us, such as your name, email address and phone number, along with information needed to deliver our services.",
+                },
+                {
+                    heading: "3. Why we process it",
+                    body: "The information is used to provide and improve our services, respond to enquiries, and meet legal obligations such as bookkeeping.",
+                },
+                {
+                    heading: "4. Retention",
+                    body: "Information is kept no longer than necessary for the purpose of processing or to meet legal obligations.",
+                },
+                {
+                    heading: "5. Your rights",
+                    body: "You have the right to access the information we hold about you and to have it corrected or deleted. Contact us to exercise these rights.",
+                },
+            ],
+        },
+    },
     contact: {
         html_title: "Contact us",
         title: "Contact us",

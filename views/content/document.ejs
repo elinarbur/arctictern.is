@@ -1,0 +1,44 @@
+<%- include('../partials/doc-info') %>
+<% const page = t.documents[doc] %>
+
+<!DOCTYPE html>
+<html lang="<%= lang %>" data-hx-boost="true">
+    <head>
+        <%- include('../partials/head', {
+            html_title: page.html_title
+        }) %>
+    </head>
+    <body>
+        <main class="flex flex-col">
+            <%- include('../partials/alert', { alert }) %>
+            <!-- prettier-ignore -->
+            <%- include('../partials/header', {
+                title: page.title,
+                subtitle: page.subtitle
+            }) %>
+
+            <section class="w-full max-w-7xl mx-auto px-8 py-16">
+                <div class="max-w-3xl">
+                    <div class="border-l-4 border-red-500 p-3 flex gap-2 bg-gray-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="size-5 shrink-0 mt-0.5">
+                            <path
+                                d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"
+                            />
+                        </svg>
+
+                        <span><%= t.documents.placeholder_notice %></span>
+                    </div>
+
+                    <% for (const section of page.sections) { %>
+                    <h2 class="text-xl font-semibold mt-8"><%= section.heading %></h2>
+                    <p class="text-lg leading-8 mt-2"><%= section.body %></p>
+                    <% } %>
+                </div>
+            </section>
+
+            <%- include('../partials/footer') %>
+        </main>
+
+        <%- include('../partials/scripts') %>
+    </body>
+</html>

@@ -74,6 +74,32 @@ pages.get("/hafa-samband", (req: Request, res: Response) => {
     });
 });
 
+// Dummy status data until there's a real source. Keys match t.status_page.systems / t.status_page.states.
+const SYSTEM_STATUS = [
+    { key: "website", state: "operational" },
+    { key: "hosting", state: "operational" },
+    { key: "network", state: "operational" },
+    { key: "phone", state: "operational" },
+    { key: "email", state: "operational" },
+] as const;
+
+pages.get("/bilanir", (req: Request, res: Response) => {
+    return res.render("content/status", {
+        alert: EXAMPLE_ALERT,
+        incidents: EXAMPLE_ALERT ? [EXAMPLE_ALERT] : [],
+        systems: SYSTEM_STATUS,
+        updated_at: new Date(),
+    });
+});
+
+pages.get("/skjol/almennir-skilmalar", (req: Request, res: Response) => {
+    return res.render("content/document", { alert: EXAMPLE_ALERT, doc: "terms" });
+});
+
+pages.get("/skjol/personuverndarstefna", (req: Request, res: Response) => {
+    return res.render("content/document", { alert: EXAMPLE_ALERT, doc: "privacy" });
+});
+
 app.use("/en", with_locale("en"), pages);
 app.use("/", with_locale("is"), pages);
 

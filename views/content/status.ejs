@@ -1,0 +1,71 @@
+<%- include('../partials/doc-info') %>
+<% const s = t.status_page %>
+<% const state_dot = { operational: 'bg-green-500', degraded: 'bg-yellow-500', outage: 'bg-red-500' } %>
+
+<!DOCTYPE html>
+<html lang="<%= lang %>" data-hx-boost="true">
+    <head>
+        <%- include('../partials/head', {
+            html_title: s.html_title
+        }) %>
+    </head>
+    <body>
+        <main class="flex flex-col">
+            <%- include('../partials/alert', { alert }) %>
+            <!-- prettier-ignore -->
+            <%- include('../partials/header', {
+                title: s.title,
+                subtitle: s.subtitle
+            }) %>
+
+            <section class="w-full max-w-7xl mx-auto px-8 py-16 space-y-12">
+                <div>
+                    <h2 class="text-xl font-semibold"><%= s.incidents_title %></h2>
+
+                    <div class="pt-4 space-y-4">
+                        <% if (incidents.length === 0) { %>
+                        <div class="bg-gray-50 p-4 flex items-center gap-3">
+                            <span class="size-3 rounded-full bg-green-500 shrink-0"></span>
+                            <p class="text-lg"><%= s.no_incidents %></p>
+                        </div>
+                        <% } %>
+
+                        <% for (const incident of incidents) { %>
+                        <div id="<%= incident.id %>" class="border-l-4 border-yellow-400 bg-gray-50 p-4">
+                            <p class="text-lg font-medium">
+                                <%= typeof incident.message === "object" ? incident.message[lang] : incident.message %>
+                            </p>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-semibold"><%= s.systems_title %></h2>
+
+                    <ul class="pt-4 divide-y divide-gray-200 bg-gray-50">
+                        <% for (const system of systems) { %>
+                        <li class="flex items-center justify-between gap-4 p-4">
+                            <span class="text-lg"><%= s.systems[system.key] %></span>
+
+                            <span class="flex items-center gap-2 font-medium">
+                                <span class="size-3 rounded-full <%= state_dot[system.state] %>"></span>
+                                <%= s.states[system.state] %>
+                            </span>
+                        </li>
+                        <% } %>
+                    </ul>
+
+                    <p class="text-sm text-black/50 mt-4">
+                        <%= s.last_updated %>:
+                        <%= updated_at.toLocaleString(lang === 'is' ? 'is-IS' : 'en-GB', { timeZone: 'Atlantic/Reykjavik', dateStyle: 'long', timeStyle: 'short' }) %>
+                    </p>
+                </div>
+            </section>
+
+            <%- include('../partials/footer') %>
+        </main>
+
+        <%- include('../partials/scripts') %>
+    </body>
+</html>

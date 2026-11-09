@@ -218,6 +218,84 @@ export const is = {
             ],
         },
     },
+    status_page: {
+        html_title: "Upplýsingaborð/bilanir",
+        title: "Upplýsingaborð",
+        subtitle: "Staða þjónustu og tilkynningar um bilanir",
+        incidents_title: "Tilkynningar",
+        no_incidents: "Engar bilanir eða truflanir hafa verið tilkynntar.",
+        systems_title: "Staða kerfa",
+        last_updated: "Síðast uppfært",
+        states: {
+            operational: "Virkt",
+            degraded: "Skert virkni",
+            outage: "Bilun",
+        },
+        systems: {
+            website: "Vefur og vefþjónustur",
+            hosting: "Hýsing og gagnavistun",
+            network: "Netkerfi",
+            phone: "Símkerfi",
+            email: "Tölvupóstur",
+        },
+    },
+    documents: {
+        placeholder_notice: "Þetta er bráðabirgðaefni og ekki endanlegur texti.",
+        terms: {
+            html_title: "Almennir skilmálar",
+            title: "Almennir skilmálar",
+            subtitle: "Skilmálar sem gilda um þjónustu Arctic Tern ehf.",
+            sections: [
+                {
+                    heading: "1. Gildissvið",
+                    body: "Skilmálar þessir gilda um alla þjónustu sem Arctic Tern ehf. veitir viðskiptavinum sínum, nema um annað sé sérstaklega samið skriflega.",
+                },
+                {
+                    heading: "2. Þjónusta",
+                    body: "Umfang þjónustu er skilgreint í tilboði eða þjónustusamningi hverju sinni. Breytingar á umfangi skulu staðfestar af báðum aðilum.",
+                },
+                {
+                    heading: "3. Verð og greiðslur",
+                    body: "Verð fer eftir gildandi verðskrá eða samþykktu tilboði. Reikningar eru gefnir út rafrænt og greiðast á eindaga.",
+                },
+                {
+                    heading: "4. Ábyrgð",
+                    body: "Arctic Tern ehf. leitast við að veita þjónustu af kostgæfni. Ábyrgð félagsins takmarkast við það sem fram kemur í þjónustusamningi.",
+                },
+                {
+                    heading: "5. Uppsögn",
+                    body: "Uppsagnarfrestur fer eftir ákvæðum þjónustusamnings. Uppsögn skal vera skrifleg.",
+                },
+            ],
+        },
+        privacy: {
+            html_title: "Persónuverndarstefna",
+            title: "Persónuverndarstefna",
+            subtitle: "Hvernig Arctic Tern ehf. fer með persónuupplýsingar",
+            sections: [
+                {
+                    heading: "1. Ábyrgðaraðili",
+                    body: "Arctic Tern ehf., Neshaga 16, 107 Reykjavík, er ábyrgðaraðili þeirra persónuupplýsinga sem fjallað er um í stefnu þessari.",
+                },
+                {
+                    heading: "2. Hvaða upplýsingum er safnað",
+                    body: "Við söfnum þeim upplýsingum sem þú lætur okkur í té, svo sem nafni, netfangi og símanúmeri, ásamt upplýsingum sem nauðsynlegar eru til að veita þjónustu.",
+                },
+                {
+                    heading: "3. Tilgangur vinnslu",
+                    body: "Upplýsingarnar eru notaðar til að veita og bæta þjónustu, svara fyrirspurnum og uppfylla lagaskyldur, svo sem vegna bókhalds.",
+                },
+                {
+                    heading: "4. Varðveisla",
+                    body: "Upplýsingar eru ekki varðveittar lengur en nauðsyn krefur miðað við tilgang vinnslunnar eða lagaskyldur.",
+                },
+                {
+                    heading: "5. Réttindi þín",
+                    body: "Þú átt rétt á að fá aðgang að upplýsingum um þig, fá þær leiðréttar eða þeim eytt. Hafðu samband við okkur til að nýta þessi réttindi.",
+                },
+            ],
+        },
+    },
     contact: {
         html_title: "Hafa samband",
         title: "Hafa samband",
