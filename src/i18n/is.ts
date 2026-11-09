@@ -13,6 +13,12 @@ export const is = {
         more: "Nánar",
         contact_us: "Hafðu samband",
         or: "eða",
+        not_listed: {
+            before:
+                "Jafnvel þó að það sem þínum rekstri vantar er ekki gefið upp hér eru góðar líkur á því að við höfum komið að slíku áður, og/eða að lausnin sé blanda af eitthverju af ofangreindu.",
+            link: "Hafðu samband",
+            after: "og hjálpaðu okkur að skilja þínar þarfir, svo við getum hjálpað þér að svara þeim.",
+        },
     },
     services: {
         software: "Hugbúnaður",
@@ -68,10 +74,6 @@ export const is = {
             "Þróun bakenda (API) fyrir hugbúnað nú þegar með framenda",
             "Uppsetning og rekstur símkerfa",
         ],
-        not_listed_before:
-            "Jafnvel þó að það sem þínum rekstri vantar er ekki gefið upp hér eru góðar líkur á því að við höfum komið að slíku áður, og/eða að lausnin sé blanda af eitthverju af ofangreindu.",
-        not_listed_link: "Hafðu samband",
-        not_listed_after: "og hjálpaðu okkur að skilja þínar þarfir, svo við getum hjálpað þér að svara þeim.",
         name_origin:
             'Félagið heitir í höfuðið á stofnanda þess, Kríu, en "arctic tern" er heiti fuglsins á ensku. Kría hefur áður starfað hjá Reiknistofu Fiskmarkaða, greiðslulausnafyrirtækinu Verifone, og stofnaði upplýsingatæknifyrirtækið Spaugur.',
         disclaimer: "Félögin Arctic Tern og Tern Systems, sem er í eigu Isavia, eru ekki skyld.",
@@ -110,6 +112,109 @@ export const is = {
                 "Hönnun, uppsetning, og rekstur netinnviða fyrir allan atvinnurekstur",
                 "Netvöktun, öryggisvöktun, og áframhaldandi viðhald netkerfa",
                 "Fullbúin þjónusta sem hentar öllum frá staðarnetum allt í stór víðnet",
+            ],
+        },
+    },
+    service_pages: {
+        all_services: "Öll þjónusta",
+        other_services: "Önnur þjónusta",
+        software: {
+            html_title: "Hugbúnaðarþjónusta",
+            title: "Hugbúnaðarþjónusta",
+            subtitle: "Þróunar- og stuðningsþjónusta við hugbúnað",
+            sections: [
+                {
+                    intro: "Arctic Tern veitir hugbúnaðarþjónustu bæði í formi þróunar/forritunar og rekstri/stuðningi. Sérfræðiþekking okkar nær yfir vítt svið lausna, en við höfum mikla reynslu af þróun á eftirfarandi:",
+                    items: [
+                        "Viðskipta- og upplýsingakerfi",
+                        "Greiðslu- og fjármálakerfi",
+                        "Stórir sem smáir vefir og vefsíður",
+                        "Vefverslanir og tengdar lausnir",
+                        "Sjálfvirknivæðing viðskiptaferla",
+                    ],
+                },
+                {
+                    intro: "Á sviði hugbúnaðarstuðnings/hugbúnaðarreksturs höfum við mesta reynslu á eftirfarandi:",
+                    items: [
+                        "Microsoft 365 umhverfið",
+                        "Vefverslanir og vefumsjónarkerfi",
+                        "Opna símkerfið FS PBX",
+                        "Samþætting gagnakerfa",
+                        "Þjónusta við núverandi og/eða aðkeyptan hugbúnað",
+                    ],
+                },
+            ],
+        },
+        operations: {
+            html_title: "Kerfisrekstur",
+            title: "Kerfisrekstur",
+            subtitle: "Rekstur tölvukerfa af öllum stærðum og gerðum",
+            sections: [
+                {
+                    intro: "Við tökum að okkur rekstur tölvukerfa fyrir fyrirtæki af öllum stærðum, hvort sem um ræðir einstaka netþjóna eða heilu kerfisumhverfin. Þú getur útvistað rekstrinum alfarið til okkar eða fengið okkur til liðs við þitt eigið tækniteymi. Við sjáum meðal annars um:",
+                    items: [
+                        "Stjórnun og rekstur hugbúnaðarkerfa",
+                        "Örugga vistunar/hýsingarþjónustu í íslenskum gagnaverum",
+                        "Uppsetningu og rekstur gagnavistunarkerfa",
+                        "Netrekstur",
+                        "Uppsetningu og rekstur símkerfa",
+                    ],
+                },
+                {
+                    intro: "Góður rekstur snýst um að koma í veg fyrir vandamál áður en þau verða. Í rekstrarþjónustu okkar felst:",
+                    items: [
+                        "Kerfisvöktun og viðbrögð við bilunum",
+                        "Öryggisvöktun og reglulegar uppfærslur",
+                        "Áframhaldandi viðhald og umbætur",
+                    ],
+                },
+            ],
+        },
+        consulting: {
+            html_title: "Ráðgjöf",
+            title: "Ráðgjöf",
+            subtitle: "Við aðstoðum þig þar sem vantar upp í, og allir spara",
+            sections: [
+                {
+                    intro: "Þegar eitthvað vantar upp á í hönnun, þróun, eða rekstri tækniinnviða má nálgast sérþekkingu okkar í ráðgjafaþjónustu til að brúa bilin. Við höfum víða og djúpa þekkingu af tölvukerfum, svo sem:",
+                    items: [
+                        "Greiðslu- og fjármálakerfum",
+                        "Netkerfum, þar á meðal stórum fyrirtækjanetum og stofnnetum",
+                        "Gagnavistun og hýsingu",
+                        "Sjálfvirknivæddum viðskiptakerfum á borð við CRM og ERP kerfi",
+                    ],
+                },
+                {
+                    intro: "Ráðgjöfin er sniðin að þínum þörfum, hvort sem um ræðir stakt verkefni eða viðvarandi aðstoð:",
+                    items: [
+                        "Aðstoð með hönnun og þróun hugbúnaðs, netkerfa, og sjálfvirkniferla",
+                        "Úttekt á núverandi kerfum og tillögur að úrbótum",
+                        "Sveigjanleg þjónusta án skuldbindingar",
+                    ],
+                },
+            ],
+        },
+        networking: {
+            html_title: "Netkerfi",
+            title: "Netkerfi",
+            subtitle: "Hönnun, uppsetning, rekstur, og viðhald tölvuneta á öllum skala",
+            sections: [
+                {
+                    intro: "Netkerfi eru okkar blóð. Staðar- og internet eru lífæð fleiri og fleiri fyrirtækja og því mikilvægt að viðkomandi kerfi séu undir verkefnið búin. Við hönnum og rekum net fyrir:",
+                    items: [
+                        "Verslanir, skrifstofur, og annan atvinnurekstur",
+                        "Stór fyrirtækjanet og stofnnet",
+                        "Víðnet sem tengja saman margar starfsstöðvar",
+                    ],
+                },
+                {
+                    intro: "Þú færð fullkomið net frá Arctic Tern, frá hönnun til reksturs:",
+                    items: [
+                        "Hönnun, uppsetning, og rekstur netinnviða",
+                        "Netvöktun, öryggisvöktun, og áframhaldandi viðhald netkerfa",
+                        "Fullbúin þjónusta sem hentar öllum frá staðarnetum allt í stór víðnet",
+                    ],
+                },
             ],
         },
     },
