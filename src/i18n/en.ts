@@ -15,6 +15,12 @@ export const en: Dictionary = {
         more: "Learn more",
         contact_us: "Contact us",
         or: "or",
+        not_listed: {
+            before:
+                "Even if what your business needs isn't listed here, there's a good chance we've done something like it before, or that the solution is a mix of the above.",
+            link: "Get in touch",
+            after: "and help us understand your needs, so we can help you meet them.",
+        },
     },
     services: {
         software: "Software",
@@ -70,10 +76,6 @@ export const en: Dictionary = {
             "Backend (API) development for software that already has a frontend",
             "Setting up and operating phone systems",
         ],
-        not_listed_before:
-            "Even if what your business needs isn't listed here, there's a good chance we've done something like it before, or that the solution is a mix of the above.",
-        not_listed_link: "Get in touch",
-        not_listed_after: "and help us understand your needs, so we can help you meet them.",
         name_origin:
             "The company is named after its founder, Kría, which is Icelandic for arctic tern. Kría previously worked at Reiknistofa Fiskmarkaða and the payment solutions company Verifone, and founded the IT company Spaugur.",
         disclaimer: "Arctic Tern is not affiliated with Tern Systems, which is owned by Isavia.",
@@ -112,6 +114,109 @@ export const en: Dictionary = {
                 "Design, installation, and operation of network infrastructure for any business",
                 "Network monitoring, security monitoring, and ongoing maintenance",
                 "End-to-end service for everything from local networks to large WANs",
+            ],
+        },
+    },
+    service_pages: {
+        all_services: "All services",
+        other_services: "Other services",
+        software: {
+            html_title: "Software services",
+            title: "Software services",
+            subtitle: "Software development and support",
+            sections: [
+                {
+                    intro: "Arctic Tern provides software services covering both development/programming and operations/support. Our expertise spans a wide range of solutions, and we have extensive experience developing:",
+                    items: [
+                        "Business and information systems",
+                        "Payment and financial systems",
+                        "Websites large and small",
+                        "Web shops and related solutions",
+                        "Business process automation",
+                    ],
+                },
+                {
+                    intro: "In software support and operations, our deepest experience is with:",
+                    items: [
+                        "The Microsoft 365 environment",
+                        "Web shops and content management systems",
+                        "The open-source FS PBX phone system",
+                        "Data system integration",
+                        "Support for existing and/or purchased software",
+                    ],
+                },
+            ],
+        },
+        operations: {
+            html_title: "Systems operations",
+            title: "Systems operations",
+            subtitle: "Operation of computer systems of every shape and size",
+            sections: [
+                {
+                    intro: "We operate computer systems for businesses of every size, from single servers to entire system environments. You can outsource operations to us entirely, or bring us in alongside your own technical team. Among other things, we handle:",
+                    items: [
+                        "Management and operation of software systems",
+                        "Secure storage/hosting in Icelandic data centres",
+                        "Setting up and operating data storage systems",
+                        "Network operations",
+                        "Setting up and operating phone systems",
+                    ],
+                },
+                {
+                    intro: "Good operations are about preventing problems before they happen. Our operations service includes:",
+                    items: [
+                        "System monitoring and incident response",
+                        "Security monitoring and regular updates",
+                        "Ongoing maintenance and improvements",
+                    ],
+                },
+            ],
+        },
+        consulting: {
+            html_title: "Consulting",
+            title: "Consulting",
+            subtitle: "We fill in the gaps where you need us, and everyone saves",
+            sections: [
+                {
+                    intro: "When something is missing in the design, development, or operation of your technical infrastructure, our consulting services bring in the expertise to bridge the gap. We have broad and deep knowledge of computer systems, such as:",
+                    items: [
+                        "Payment and financial systems",
+                        "Networks, including large enterprise and backbone networks",
+                        "Data storage and hosting",
+                        "Automated business systems such as CRM and ERP",
+                    ],
+                },
+                {
+                    intro: "Our consulting is tailored to your needs, whether it's a one-off project or ongoing support:",
+                    items: [
+                        "Help with designing and developing software, networks, and automation",
+                        "Reviews of existing systems with recommendations for improvement",
+                        "Flexible service with no commitment",
+                    ],
+                },
+            ],
+        },
+        networking: {
+            html_title: "Networking",
+            title: "Networking",
+            subtitle: "Design, installation, operation, and maintenance of networks at any scale",
+            sections: [
+                {
+                    intro: "Networking is in our blood. Local networks and the internet are the lifeline of more and more businesses, so it matters that those systems are up to the task. We design and operate networks for:",
+                    items: [
+                        "Shops, offices, and other businesses",
+                        "Large enterprise and backbone networks",
+                        "Wide area networks connecting multiple sites",
+                    ],
+                },
+                {
+                    intro: "With Arctic Tern you get a complete network, from design to operation:",
+                    items: [
+                        "Design, installation, and operation of network infrastructure",
+                        "Network monitoring, security monitoring, and ongoing maintenance",
+                        "End-to-end service for everything from local networks to large WANs",
+                    ],
+                },
             ],
         },
     },
