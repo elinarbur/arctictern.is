@@ -3,10 +3,20 @@ import { services_router } from "@/src/routers/services";
 import { web_services_router } from "@/src/routers/web-services";
 import { randomUUID } from "crypto";
 import express, { Request, Response } from "express";
+import { statSync } from "fs";
 import rateLimit from "express-rate-limit";
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+/** Cache-buster for the stylesheet URL: changes whenever tw.min.css is rebuilt (deploy or dev watcher). */
+const css_version = () => {
+    try {
+        return Math.floor(statSync("static/css/tw.min.css").mtimeMs).toString(36);
+    } catch {
+        return "0";
+    }
+};
 
 app.set("view engine", "ejs");
 
@@ -33,6 +43,7 @@ app.use((req, res, next) => {
     res.locals._pathname = req.path;
     // @ts-expect-error
     res.locals._ratelimit = req.rateLimit;
+    res.locals.css_version = css_version();
 
     next();
 });

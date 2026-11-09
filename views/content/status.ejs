@@ -1,6 +1,6 @@
 <%- include('../partials/doc-info') %>
 <% const s = t.status_page %>
-<% const state_dot = { operational: 'bg-green-500', degraded: 'bg-yellow-500', outage: 'bg-red-500' } %>
+<% const state_dot = { operational: 'bg-green-500', degraded: 'bg-amber-500', outage: 'bg-red-500' } %>
 
 <!DOCTYPE html>
 <html lang="<%= lang %>" data-hx-boost="true">
@@ -22,10 +22,10 @@
                 <div>
                     <h2 class="text-xl font-semibold"><%= s.incidents_title %></h2>
 
-                    <div class="pt-4 space-y-4">
+                    <div class="mt-4 space-y-4">
                         <% if (incidents.length === 0) { %>
                         <div class="bg-gray-50 p-4 flex items-center gap-3">
-                            <span class="size-3 rounded-full bg-green-500 shrink-0"></span>
+                            <span class="size-3 bg-green-500 shrink-0"></span>
                             <p class="text-lg"><%= s.no_incidents %></p>
                         </div>
                         <% } %>
@@ -43,13 +43,13 @@
                 <div>
                     <h2 class="text-xl font-semibold"><%= s.systems_title %></h2>
 
-                    <ul class="pt-4 divide-y divide-gray-200 bg-gray-50">
+                    <ul class="mt-4 divide-y divide-gray-200 bg-gray-50">
                         <% for (const system of systems) { %>
                         <li class="flex items-center justify-between gap-4 p-4">
                             <span class="text-lg"><%= s.systems[system.key] %></span>
 
                             <span class="flex items-center gap-2 font-medium">
-                                <span class="size-3 rounded-full <%= state_dot[system.state] %>"></span>
+                                <span class="size-3 <%= state_dot[system.state] %>"></span>
                                 <%= s.states[system.state] %>
                             </span>
                         </li>
