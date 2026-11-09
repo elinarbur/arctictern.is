@@ -4,9 +4,6 @@ export const is = {
             "Við hönnum, smíðum, og rekum öflug tölvukerfi sem virka hnökurlaust. Byggt á djúpri, þverfaglegri þekkingu á tölvukerfum yfir áratugaskeið.",
         og_locale: "is_IS",
     },
-    lang_switcher: {
-        label: "Tungumál",
-    },
     nav: {
         home: "Heimasíða",
         services: "Þjónusta",

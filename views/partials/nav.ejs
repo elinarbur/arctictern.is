@@ -16,46 +16,18 @@
         <a href="<%= url('/') %>"><%= t.nav.home %></a>
         <a href="<%= url('/thjonusta') %>"><%= t.nav.services %></a>
         <a href="<%= url('/um-okkur') %>"><%= t.nav.about %></a>
-        <% const current_locale = alternates.find((a) => a.current) %>
-        <details class="relative group/lang">
-            <summary
-                class="flex items-center gap-1.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden"
-                aria-label="<%= t.lang_switcher.label %>"
-            >
-                <span class="text-lg" aria-hidden="true"><%= current_locale.flag %></span>
-
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 640"
-                    class="size-5 transition-transform duration-100 group-open/lang:rotate-180"
-                >
-                <path
-                    d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z"
-                />
-            </svg>
-            </summary>
-
-            <!-- hx-boost off: a full load is needed so <html lang> and <head> update -->
-            <ul
-                class="md:absolute md:right-0 mt-4 md:mt-3 bg-white min-w-40 py-2 shadow-lg z-10"
-                hx-boost="false"
-                data-hx-boost="false"
-            >
-                <% for (const alt of alternates) { %>
-                <li>
-                    <a
-                        href="<%= alt.href %>"
-                        hreflang="<%= alt.locale %>"
-                        lang="<%= alt.locale %>"
-                        class="flex items-center gap-2 px-4 py-2 hover:bg-yellow-300 <%= alt.current ? 'font-semibold' : '' %>"
-                        <% if (alt.current) { %>aria-current="true"<% } %>
-                    >
-                        <span class="text-lg" aria-hidden="true"><%= alt.flag %></span>
-                        <span><%= alt.name %></span>
-                    </a>
-                </li>
-                <% } %>
-            </ul>
-        </details>
+        <% for (const alt of alternates.filter((a) => !a.current)) { %>
+        <!-- hx-boost off: a full load is needed so <html lang> and <head> update -->
+        <a
+            href="<%= alt.href %>"
+            hreflang="<%= alt.locale %>"
+            lang="<%= alt.locale %>"
+            class="flex items-center gap-1.5"
+            data-hx-boost="false"
+        >
+            <span class="text-lg" aria-hidden="true"><%= alt.flag %></span>
+            <span><%= alt.name %></span>
+        </a>
+        <% } %>
     </nav>
 </div>

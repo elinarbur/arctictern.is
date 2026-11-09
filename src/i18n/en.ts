@@ -6,9 +6,6 @@ export const en: Dictionary = {
             "We design, build, and operate robust computer systems that just work. Built on decades of deep, cross-disciplinary experience with computer systems.",
         og_locale: "en_GB",
     },
-    lang_switcher: {
-        label: "Language",
-    },
     nav: {
         home: "Home",
         services: "Services",
